@@ -12,8 +12,8 @@ public class Fregues {
     private long id;
 
     @OneToOne(cascade=CascadeType.PERSIST)
-    @JoinColumn(name = "id_usuario", referencedColumnName = "id", nullable = false)
-    private Usuario usuario;
+    @JoinColumn(name = "id_telefone", referencedColumnName = "id", nullable = false)
+    private Telefone telefone;
 
     public long getId() {
         return id;
@@ -23,11 +23,11 @@ public class Fregues {
         this.id = id;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public Telefone getTelefone() {
+        return telefone;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setTelefone(Telefone telefone) {
+        this.telefone = telefone;
     }
 }

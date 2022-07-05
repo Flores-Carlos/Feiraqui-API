@@ -1,7 +1,12 @@
 package br.com.api.feiraqui.model;
 
-import javax.persistence.*;
+import lombok.Data;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+@Data
 @Entity
 @Table(name = "feira_barracas")
 public class FeiraBarracas {
@@ -23,56 +28,8 @@ public class FeiraBarracas {
     private double largura;
 
     @Column(name = "profundidade", nullable = true)
-    private Double profundidade;
+    private double profundidade;
 
     @Column(name = "subprefeitura", length = 2, nullable = true)
     private String subprefeitura;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public Feira getFeira() {
-        return feira;
-    }
-
-    public void setFeira(Feira feira) {
-        this.feira = feira;
-    }
-
-    public Barraca getBarraca() {
-        return barraca;
-    }
-
-    public void setBarraca(Barraca barraca) {
-        this.barraca = barraca;
-    }
-
-    public double getLargura() {
-        return largura;
-    }
-
-    public void setLargura(double largura) {
-        this.largura = largura;
-    }
-
-    public Double getProfundidade() {
-        return profundidade;
-    }
-
-    public void setProfundidade(Double profundidade) {
-        this.profundidade = profundidade;
-    }
-
-    public String getSubprefeitura() {
-        return subprefeitura;
-    }
-
-    public void setSubprefeitura(String subprefeitura) {
-        this.subprefeitura = subprefeitura;
-    }
 }

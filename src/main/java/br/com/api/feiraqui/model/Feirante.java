@@ -1,7 +1,10 @@
 package br.com.api.feiraqui.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
+@Data
 @Entity
 @Table(name = "feirante")
 public class Feirante {
@@ -14,20 +17,4 @@ public class Feirante {
     @OneToOne(cascade=CascadeType.PERSIST)
     @JoinColumn(name = "id_prestador", referencedColumnName = "id", nullable = false)
     private Prestador prestador;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public Prestador getPrestador() {
-        return prestador;
-    }
-
-    public void setPrestador(Prestador prestador) {
-        this.prestador = prestador;
-    }
 }

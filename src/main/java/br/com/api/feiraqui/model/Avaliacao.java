@@ -1,7 +1,11 @@
 package br.com.api.feiraqui.model;
 
-import javax.persistence.*;
+import lombok.Data;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+
+@Data
 @Entity
 @Table(name = "avaliacao")
 public class Avaliacao {
@@ -11,8 +15,9 @@ public class Avaliacao {
     @Column(name = "id")
     private long id;
 
+    @NotNull(message = "A nota é obrigatória")
     @Column(name = "nota", nullable = false)
-    private int nota;
+    private long nota;
 
     @Column(name = "comentario", columnDefinition = "TINYTEXT", nullable = true)
     private String comentario;
@@ -24,44 +29,4 @@ public class Avaliacao {
     @OneToOne(cascade=CascadeType.PERSIST)
     @JoinColumn(name = "id_prestador", referencedColumnName = "id", nullable = false)
     private Prestador prestador;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public int getNota() {
-        return nota;
-    }
-
-    public void setNota(int nota) {
-        this.nota = nota;
-    }
-
-    public String getComentario() {
-        return comentario;
-    }
-
-    public void setComentario(String comentario) {
-        this.comentario = comentario;
-    }
-
-    public Fregues getFregues() {
-        return fregues;
-    }
-
-    public void setFregues(Fregues fregues) {
-        this.fregues = fregues;
-    }
-
-    public Prestador getPrestador() {
-        return prestador;
-    }
-
-    public void setPrestador(Prestador prestador) {
-        this.prestador = prestador;
-    }
 }
