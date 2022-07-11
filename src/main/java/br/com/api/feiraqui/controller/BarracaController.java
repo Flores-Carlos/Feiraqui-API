@@ -2,6 +2,7 @@ package br.com.api.feiraqui.controller;
 
 import br.com.api.feiraqui.model.Barraca;
 import br.com.api.feiraqui.service.BarracaService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -18,6 +19,7 @@ import java.util.Map;
 @RequestMapping("/barraca")
 public class BarracaController {
 
+    @Autowired
     private BarracaService barracaService;
     public BarracaController(BarracaService barracaService){
         this.barracaService = barracaService;

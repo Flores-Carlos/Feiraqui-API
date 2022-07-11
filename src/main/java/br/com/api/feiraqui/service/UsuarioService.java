@@ -2,6 +2,7 @@ package br.com.api.feiraqui.service;
 
 import br.com.api.feiraqui.model.Usuario;
 import br.com.api.feiraqui.repository.IUsuario;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -11,6 +12,7 @@ import java.util.List;
 @Service
 public class UsuarioService {
 
+    @Autowired
     private IUsuario repository;
     private PasswordEncoder passwordEnconder;
 

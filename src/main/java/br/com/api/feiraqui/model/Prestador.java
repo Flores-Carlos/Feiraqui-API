@@ -1,7 +1,10 @@
 package br.com.api.feiraqui.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
+@Data
 @Entity
 @Table(name = "prestador")
 public class Prestador {

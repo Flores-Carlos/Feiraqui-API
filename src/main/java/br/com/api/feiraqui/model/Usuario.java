@@ -8,7 +8,6 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 @Data
-
 @Entity
 @Table(name = "usuario")
 public class Usuario {
@@ -48,6 +47,6 @@ public class Usuario {
     private Endereco endereco;
 
     @OneToOne(cascade=CascadeType.PERSIST)
-    @JoinColumn(name = "id_usuario", referencedColumnName = "id", nullable = false)
-    private Usuario usuario;
+    @JoinColumn(name = "id_telefone", referencedColumnName = "id", nullable = false)
+    private Telefone telefone;
 }

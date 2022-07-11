@@ -2,6 +2,7 @@ package br.com.api.feiraqui.controller;
 
 import br.com.api.feiraqui.model.Endereco;
 import br.com.api.feiraqui.service.EnderecoService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -18,6 +19,7 @@ import java.util.Map;
 @RequestMapping("/endereco")
 public class EnderecoController {
 
+    @Autowired
     private EnderecoService enderecoService;
     public EnderecoController(EnderecoService enderecoService){
         this.enderecoService = enderecoService;

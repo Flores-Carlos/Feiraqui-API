@@ -2,6 +2,7 @@ package br.com.api.feiraqui.controller;
 
 import br.com.api.feiraqui.model.Conta;
 import br.com.api.feiraqui.service.ContaService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -18,6 +19,7 @@ import java.util.Map;
 @RequestMapping("/conta")
 public class ContaController {
 
+    @Autowired
     private ContaService contaService;
     public ContaController(ContaService contaService){
         this.contaService = contaService;

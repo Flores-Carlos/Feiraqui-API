@@ -2,6 +2,7 @@ package br.com.api.feiraqui.controller;
 
 import br.com.api.feiraqui.model.Pedido;
 import br.com.api.feiraqui.service.PedidoService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -18,6 +19,7 @@ import java.util.Map;
 @RequestMapping("/pedido")
 public class PedidoController {
 
+    @Autowired
     private PedidoService pedidoService;
     public PedidoController(PedidoService pedidoService){
         this.pedidoService = pedidoService;

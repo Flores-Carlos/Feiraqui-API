@@ -2,6 +2,7 @@ package br.com.api.feiraqui.controller;
 
 import br.com.api.feiraqui.model.Fregues;
 import br.com.api.feiraqui.service.FreguesService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -14,26 +15,27 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@CrossOrigin("*")
 @RequestMapping("/fregues")
+@CrossOrigin("*")
 public class FreguesController {
 
+    @Autowired
     private FreguesService freguesService;
     public FreguesController(FreguesService freguesService){
         this.freguesService = freguesService;
     }
 
     @GetMapping
-    public ResponseEntity<List<Fregues>> listaFreguess (){
+    public ResponseEntity<List<Fregues>> listaFregueses (){
         return ResponseEntity.status(200).body(freguesService.listarFregues());
     }
 
-    @PostMapping
+    @PostMapping("/cadastrar")
     public ResponseEntity<Fregues> cadastrarFregues (@Valid @RequestBody Fregues fregues){
         return ResponseEntity.status(201).body(freguesService.criarFregues(fregues));
     }
 
-    @PutMapping
+    @PutMapping("/editar")
     public ResponseEntity<Fregues> editarFregues (@Valid @RequestBody Fregues fregues){
         return ResponseEntity.status(200).body(freguesService.editarFregues(fregues));
     }

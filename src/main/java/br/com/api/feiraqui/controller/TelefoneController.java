@@ -2,6 +2,7 @@ package br.com.api.feiraqui.controller;
 
 import br.com.api.feiraqui.model.Telefone;
 import br.com.api.feiraqui.service.TelefoneService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -18,6 +19,7 @@ import java.util.Map;
 @RequestMapping("/telefone")
 public class TelefoneController {
 
+    @Autowired
     private TelefoneService telefoneService;
     public TelefoneController(TelefoneService telefoneService){
         this.telefoneService = telefoneService;

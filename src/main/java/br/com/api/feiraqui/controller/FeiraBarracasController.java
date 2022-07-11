@@ -2,6 +2,7 @@ package br.com.api.feiraqui.controller;
 
 import br.com.api.feiraqui.model.FeiraBarracas;
 import br.com.api.feiraqui.service.FeiraBarracasService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -15,16 +16,17 @@ import java.util.Map;
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping("/feiraBarracas")
+@RequestMapping("/feira-barracas")
 public class FeiraBarracasController {
 
+    @Autowired
     private FeiraBarracasService feiraBarracasService;
     public FeiraBarracasController(FeiraBarracasService feiraBarracasService){
         this.feiraBarracasService = feiraBarracasService;
     }
 
     @GetMapping
-    public ResponseEntity<List<FeiraBarracas>> listaFeiraBarracass (){
+    public ResponseEntity<List<FeiraBarracas>> listaFeiraBarracas (){
         return ResponseEntity.status(200).body(feiraBarracasService.listarFeiraBarracas());
     }
 

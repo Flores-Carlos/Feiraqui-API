@@ -2,6 +2,7 @@ package br.com.api.feiraqui.controller;
 
 import br.com.api.feiraqui.model.Entregador;
 import br.com.api.feiraqui.service.EntregadorService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -18,13 +19,14 @@ import java.util.Map;
 @RequestMapping("/entregador")
 public class EntregadorController {
 
+    @Autowired
     private EntregadorService entregadorService;
     public EntregadorController(EntregadorService entregadorService){
         this.entregadorService = entregadorService;
     }
 
     @GetMapping
-    public ResponseEntity<List<Entregador>> listaEntregadors (){
+    public ResponseEntity<List<Entregador>> listaEntregadores (){
         return ResponseEntity.status(200).body(entregadorService.listarEntregador());
     }
 

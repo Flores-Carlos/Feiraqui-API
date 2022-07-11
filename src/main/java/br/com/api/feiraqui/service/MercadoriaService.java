@@ -2,6 +2,7 @@ package br.com.api.feiraqui.service;
 
 import br.com.api.feiraqui.model.Mercadoria;
 import br.com.api.feiraqui.repository.IMercadoria;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,7 +10,7 @@ import java.util.List;
 @Service
 public class MercadoriaService {
 
-
+    @Autowired
     private IMercadoria repository;
 
     public List<Mercadoria> listarMercadoria() {

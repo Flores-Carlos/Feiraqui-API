@@ -2,6 +2,7 @@ package br.com.api.feiraqui.controller;
 
 import br.com.api.feiraqui.model.Avaliacao;
 import br.com.api.feiraqui.service.AvaliacaoService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -18,13 +19,14 @@ import java.util.Map;
 @RequestMapping("/avaliacao")
 public class AvaliacaoController {
 
+    @Autowired
     private AvaliacaoService avaliacaoService;
     public AvaliacaoController(AvaliacaoService avaliacaoService){
         this.avaliacaoService = avaliacaoService;
     }
 
     @GetMapping
-    public ResponseEntity<List<Avaliacao>> listaAvaliacaos (){
+    public ResponseEntity<List<Avaliacao>> listaAvaliacoes (){
         return ResponseEntity.status(200).body(avaliacaoService.listarAvaliacao());
     }
 

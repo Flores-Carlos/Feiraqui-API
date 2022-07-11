@@ -2,6 +2,7 @@ package br.com.api.feiraqui.service;
 
 import br.com.api.feiraqui.model.Prestador;
 import br.com.api.feiraqui.repository.IPrestador;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,7 +10,7 @@ import java.util.List;
 @Service
 public class PrestadorService {
 
-
+    @Autowired
     private IPrestador repository;
 
     public List<Prestador> listarPrestador() {

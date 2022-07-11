@@ -2,6 +2,7 @@ package br.com.api.feiraqui.controller;
 
 import br.com.api.feiraqui.model.Usuario;
 import br.com.api.feiraqui.service.UsuarioService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -18,6 +19,7 @@ import java.util.Map;
 @RequestMapping("/usuario")
 public class UsuarioController {
 
+    @Autowired
     private UsuarioService usuarioService;
     public UsuarioController(UsuarioService usuarioService){
         this.usuarioService = usuarioService;

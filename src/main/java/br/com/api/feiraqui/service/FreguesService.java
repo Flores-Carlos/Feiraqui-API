@@ -2,6 +2,7 @@ package br.com.api.feiraqui.service;
 
 import br.com.api.feiraqui.model.Fregues;
 import br.com.api.feiraqui.repository.IFregues;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,7 +10,7 @@ import java.util.List;
 @Service
 public class FreguesService {
 
-
+    @Autowired
     private IFregues repository;
 
     public List<Fregues> listarFregues() {
